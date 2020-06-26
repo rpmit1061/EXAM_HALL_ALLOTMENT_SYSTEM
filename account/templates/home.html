@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load widget_tweaks %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+    <title>Govt Polytechnic College Sanawad</title>
+</head>
+<body class="background">
+<div class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="white-color">Government Polytechnic College Sanawad </h1>
+            <h2 class="white-color">Examination Hall Allotment System</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <form method="POST" class="forms">
+                {% csrf_token %}
+                  <h3 class="text-center">Login Form</h3>
+                  <div class="form-group">
+                    <label>User Name</label>
+<!--                    <input type="text" class="form-control" name="username" required  aria-describedby="emailHelp" placeholder="User Name">-->
+                      {{ form.username|add_class:"form-control" }}
+                  </div>
+                  <div class="form-group">
+                    <label>Password</label>
+<!--                    <input type="password" class="form-control" name="password" required placeholder="Password">-->
+                      {{ form.password1|add_class:"form-control" }}
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                     <a href="account/register" class="btn btn-success pull-right">Registration</a><br>
+            </form>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

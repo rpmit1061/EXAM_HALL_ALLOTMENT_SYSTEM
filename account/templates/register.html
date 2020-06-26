@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load widget_tweaks %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+    <title>Govt Polytechnic College Sanawad</title>
+</head>
+<body class="background">
+<div class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="white-color">Government Polytechnic College Sanawad </h1>
+            <h2 class="white-color">Examination Hall Allotment System</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <form  action="" method="POST" class="forms">
+                {% csrf_token %}
+                <h3 class="text-center">Registration Form</h3>
+                  <div class="form-group">
+                    <label>User Name</label>
+                      {{form.username|add_class:"form-control"}}
+                  </div>
+                  <div class="form-group">
+                    <label>Password</label>
+                      {{form.password1|add_class:"form-control"}}
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm Password</label>
+                    {{form.password2|add_class:"form-control"}}
+                  </div>
+                  <div class="form-group">
+                    <label>Mobile Number</label>
+                    {{form.mobile|add_class:"form-control"}}
+                  </div>
+                  <div class="form-group">
+                    <label>Date of Birth</label>
+                      {{form.dob|add_class:"form-control"}}
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                     <a href="/" class="btn btn-danger pull-right">Cancle</a><br>
+            </form>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

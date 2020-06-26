@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load widget_tweaks %}
+    <title>{{ username }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+
+</head>
+<body style="background-color:azure">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 header">
+            <h2 class="text-center white-color">Govt. Polytechnic collage Sanawad</h2>
+            <h3 class="text-center white-color">Exam Hall Allotment System.</h3>
+            <h3 class="text-center">Hello {{ username }}</h3>
+            <a href="account/logout" class="btn btn-success pull-right">Logout</a>
+        </div>
+    </div>
+    <div class="col-md-12 buttons">
+        <a href="alloment/data_sheet_upload" class="btn btn-success btn-lg">Data Sheet Upload</a>
+        <a href="room_maintenance" class="btn btn-success btn-lg">Room Maintenance</a>
+        <a href="room_allotment" class="btn btn-success btn-lg">Room Allotment</a>
+        <a href="print_report" class="btn btn-success btn-lg">Print Report</a>
+
+    </div>
+</div>
+</body>
+</html>

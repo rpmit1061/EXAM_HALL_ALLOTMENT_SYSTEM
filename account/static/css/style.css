@@ -1,0 +1,48 @@
+.background{
+background-image: url("../images/img.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+.forms{
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    width: 500px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .white-color{
+  background:white;
+  text-shadow: 2px 2px 5px red;
+  opacity: 0.9;
+  }
+.white-color:hover {
+  opacity: 1.0;
+}
+.header{
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 5px 5px lightblue;
+}
+.buttons{
+margin-top:20px;
+padding:25px;
+}
+.buttons a {
+margin: 25px 50px;
+box-shadow: 5px 5px lightblue;
+}
+.header1{
+
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+table tr td{
+border:1px solid black;
+padding: 25px;
+font-size: 20px;
+}
