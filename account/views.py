@@ -44,6 +44,13 @@ def user(request):
     return render(request, 'user.html')
 
 
+def home(request):
+    if request.session.get('username') is not None:
+        return render(request, 'user.html')
+    else:
+        return redirect('/')
+
+
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logout(request):
     try:

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load widget_tweaks %}
+<div class="col-md-12 header1">
+    <form method="post" action="{% url 'report'  %}">
+        {% csrf_token %}
+        <label>Select Exam Date</label>
+        <input name="exam_date" type="date" required>
+        <label>Select Room No.</label>
+        <select name="room_no" required>
+            <option>Select Room No.</option>
+            {% for rows in row %}
+            <option value="{{ rows.0 }}">{{ rows.0 }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" class="btn btn-success btn-lg">
+    </form>
+</div>
+<div class="col-md-12 header1">
+
+        {% for enrollment_no in report_data %}
+        {{ enrollment_no.0 }}
+        {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-12 header1">
+    <h3>Exam Date : {{ examdate }}</h3>
+    <form method="post" action="{% url 'allotment3'  %}">
+  <label>Select Hall No For allotment </label>
+        <select name="room_no" required>
+        <option value="">Select Room No.</option>
+        {% for item in row %}
+        <option value="{{ item.0 }}">{{ item.0 }}</option>
+        {% endfor %}
+    </select>
+<table>
+<tr>
+    <th>Subject code</th>
+    <th>No of Student To be Appeared</th>
+    <th>Room Allot </th>
+    <th>Room to be Allot</th>
+</tr>
+
+        {% csrf_token %}
+{% for i in data %}
+  {% if i.1 == 66 %}
+    {{name|default:"readonly"}}
+    {% else %}
+    {{name|default:""}}
+   {% endif %}
+    <tr>
+        <td>{{ i.0 }}</td>
+        <td>{{ i.1 }}</td>
+        <td>{{ i.2.0.0 }}
+        <td><input type="text" name="allot" value="0" ></td>
+    </tr>
+    {% endfor %}
+<tr><td colspan="4" align="center"><input type="submit" class="btn btn-success btn-lg"></td></tr>
+
+</table>
+</form>
+</div>
+{% endblock %}

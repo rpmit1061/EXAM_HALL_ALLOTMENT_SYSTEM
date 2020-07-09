@@ -41,7 +41,7 @@ box-shadow: 5px 5px lightblue;
     border-radius: 10px;
     margin-top: 40px;
 }
-table tr td{
+table tr td, table tr th{
 border:1px solid black;
 padding: 25px;
 font-size: 20px;
