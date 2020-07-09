@@ -32,3 +32,9 @@ class UploadFile(models.Model):
     file = models.FileField(upload_to=content_file_name)
     ttfile = models.FileField(upload_to=time_file_name, default='0000000')
 
+
+class RoomCreate(models.Model):
+    room_no = models.IntegerField()
+    no_col = models.IntegerField()
+    no_row = models.IntegerField()
+    total_capacity = models.IntegerField()

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load widget_tweaks %}
+<h2>Hello {{ username }}</h2>
 <div class="col-md-3 header1">
     <h2>Data Sheet Upload </h2>
     <form method="POST" name="uploadform" enctype="multipart/form-data">
@@ -32,15 +33,17 @@
                 <td>{{ item.sessionmonth }}</td>
                 <td>{{ item.year }}</td>
                 <td>
-                    <form action="{% url 'delete_record' item.id %}" method="post">
+                    <form action="{% url 'delete_record' item.id %}" method="post" onsubmit="return submitResult()">
                         {% csrf_token %}
                         <input type="hidden" name="file" value="{{ item.file}}">
                         <input type="hidden" name="ttfile" value="{{ item.ttfile}}">
-                        <input type="submit" value="Delete cat">
+                        <input type="submit"  value="Delete" class="btn btn-danger">
                     </form>
                 </td>
             </tr>
             {% endfor %}
     </table>
 </div>
+
+
 {% endblock %}

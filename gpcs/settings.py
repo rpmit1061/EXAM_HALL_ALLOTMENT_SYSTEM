@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'account',
     'bootstrap3',
     'widget_tweaks',
-    'alloment',
+    'allotment',
 
 ]
 

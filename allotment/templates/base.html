@@ -9,6 +9,7 @@
     {% load widget_tweaks %}
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+    <script src="{% static 'js/total.js' %}"></script>
 </head>
 <body style="background-color:azure">
 <div class="container">
@@ -17,12 +18,21 @@
             <h2 class="text-center white-color">Govt. Polytechnic collage Sanawad</h2>
             <h3 class="text-center white-color">Exam Hall Allotment System.</h3>
             <input type=button value="Previous Page" class="btn btn-danger pull-left" onClick="javascript:history.go(-1);">
+            <a href="/account/home" type="button" class="btn btn-success" style="margin-left:450px">Home</a>
             <a href="/account/logout" class="btn btn-success pull-right">Logout</a>
         </div>
     </div>
     {% block content %}
     This is block content
     {% endblock %}
+<script>
+function submitResult() {
+   if ( confirm("Are you sure you wish to delete?") == false ) {
+      return false ;
+   } else {
+      return true ;
+   }
+}</script>
 </div>
 </body>
 </html>

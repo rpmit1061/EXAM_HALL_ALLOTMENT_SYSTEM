@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.index),
     path('account/', include('account.urls')),
-    path('alloment/', include('alloment.urls')),
+    path('allotment/', include('allotment.urls')),
 ]

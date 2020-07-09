@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load widget_tweaks %}
+<h2>Hello {{ username }}</h2>
+<div class="col-md-12 header1 text-center">
+
+    <h2>Create Room</h2>
+    <form method="POST" enctype="">
+        {% csrf_token %}
+        <div class="col-xs-2">
+             <label>Room No.</label>
+             {{ form.room_no|append_attr:"class:form-control"}}
+        </div>
+        <div class="col-xs-2">
+            <label>No. Rows</label>
+            {{ form.no_row|add_class:"form-control"}}
+        </div>
+        <div class="col-xs-2">
+            <label>No. Col</label>
+            {{ form.no_col|add_class:"form-control"}}
+        </div>
+        <div class="col-xs-2">
+            <label>Total Capacity</label>
+            {{ form.total_capacity|add_class:"form-control"}}
+        </div>
+        <div class="col-xs-2">
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>
+<div class="col-md-12">
+    <table>
+        <tr>
+            <th>Room No.</th>
+            <th>No of Column</th>
+            <th>No of Rows</th>
+            <th>Total Capacity</th>
+            <th>Delete Room</th>
+        </tr>
+    {% for room in rooms %}
+        <tr>
+            <td>{{ room.room_no }}</td>
+            <td>{{ room.no_col }}</td>
+            <td>{{ room.no_row }}</td>
+            <td>{{ room.total_capacity }}</td>
+            <td>
+                <form action="{% url 'delete_room' room.id %}" method="post" onsubmit="return submitResult()">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+        </table>
+</div>
+
+{% endblock %}

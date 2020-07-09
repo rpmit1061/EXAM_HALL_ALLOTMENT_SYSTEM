@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class AllomentConfig(AppConfig):
-    name = 'alloment'
+    name = 'allotment'

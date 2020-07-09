@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-6 header1">
+    <form method="post" action="{% url 'allotment' %}" >
+        {% csrf_token %}
+        <label>Select Date</label>
+        <input name="examdate" type="date" value="">
+        <input type="submit" class="btn btn-success">
+    </form>
+</div>
+<div class="col-md-6 header1">
+{% if row is None %}
+<h1>Please Select Exam Date.</h1>
+{% else %}
+    <h3>For Exam Date : {{ examdates }}</h3>
+<table>
+    <tr>
+        <th>Subject Code</th>
+        <th>No. of Students</th>
+    </tr>
+    <form method="post" action="{% url 'allotment2'  %}">
+    {% csrf_token %}
+{% for rows in row %}
+    <tr>
+        <td>
+            <input name="subject_code" value="{{ rows.1 }}" readonly>
+        </td>
+        <td>
+            <input name="no_of_student" value="{{ rows.0 }}" readonly>
+        </td>
+    </tr>
+{% endfor %}
+        <tr><td colspan="2" align="center">
+            <input type="submit" value="Next" class="btn btn-success btn-lg">
+        </td></tr>
+    </form>
+
+
+</table>
+
+{% endif %}
+</div>
+{% endblock %}
