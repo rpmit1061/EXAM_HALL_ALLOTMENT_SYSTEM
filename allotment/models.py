@@ -36,6 +36,7 @@ class UploadFile(models.Model):
 class RoomCreate(models.Model):
     room_no = models.IntegerField()
     dev = models.CharField(max_length=100)
+    dev1 = models.CharField(max_length=100)
     no_col = models.IntegerField()
     no_row = models.IntegerField()
     total_capacity = models.IntegerField()
