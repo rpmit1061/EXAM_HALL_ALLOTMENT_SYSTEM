@@ -35,6 +35,8 @@ class UploadFile(models.Model):
 
 class RoomCreate(models.Model):
 #     room_no = models.IntegerField()
-#     no_col = models.IntegerField()
+#     no_col = models.IntegerField()git 
+
+
     no_row = models.IntegerField()
     total_capacity = models.IntegerField()
