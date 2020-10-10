@@ -25,7 +25,7 @@ def index(request):
         context = {'form': form}
         return render(request, 'home.html', context)
 
-
+# To Register Account with the GPCS with the help of form.
 def register(request):
     if request.method == "POST":
         form = UserFrom(request.POST)
